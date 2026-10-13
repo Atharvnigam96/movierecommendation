@@ -1,0 +1,1281 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #080b12;
+  color: white;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+nav {
+  height: 70px;
+  padding: 0 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+
+  background: #0b0f18;
+  border-bottom: 1px solid #1c2230;
+}
+
+nav h2 {
+  margin: 0;
+  font-size: 24px;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+nav a {
+  color: #b8bcc7;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: white;
+}
+
+
+/* =========================================
+   SEARCH BAR
+========================================= */
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 12px;
+
+  background: #111722;
+  border: 1px solid #202838;
+  border-radius: 8px;
+}
+
+.search-bar input {
+  width: 180px;
+
+  background: transparent;
+  border: none;
+  outline: none;
+
+  color: white;
+  font-size: 14px;
+}
+
+.search-bar input::placeholder {
+  color: #777f8f;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  min-height: 550px;
+  padding: 0 60px;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      #080b12 0%,
+      rgba(8, 11, 18, 0.95) 30%,
+      rgba(8, 11, 18, 0.35) 70%,
+      #080b12 100%
+    ),
+    url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content {
+  max-width: 600px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-label {
+  margin-bottom: 20px;
+
+  color: #8da7d6;
+
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  margin: 0 0 25px;
+
+  font-size: 64px;
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.hero-description {
+  max-width: 500px;
+  margin-bottom: 30px;
+
+  color: #aeb4c0;
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.watch-btn,
+.list-btn {
+  padding: 13px 24px;
+
+  border: none;
+  border-radius: 8px;
+
+  font-size: 15px;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.watch-btn {
+  background: white;
+  color: #080b12;
+  font-weight: bold;
+}
+
+.list-btn {
+  background: #1b2230;
+  color: white;
+}
+
+.watch-btn:hover,
+.list-btn:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.recommended {
+  padding: 40px 60px;
+  background: #080b12;
+}
+
+.section-header {
+  margin-bottom: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.section-header a {
+  color: #8b7cff;
+}
+
+
+/* =========================================
+   MOVIE LIST
+========================================= */
+
+.movie-list {
+  display: flex;
+  gap: 20px;
+
+  overflow-x: auto;
+
+  padding-bottom: 10px;
+}
+
+.movie-list::-webkit-scrollbar {
+  height: 7px;
+}
+
+.movie-list::-webkit-scrollbar-track {
+  background: #0d121c;
+}
+
+.movie-list::-webkit-scrollbar-thumb {
+  background: #2a3345;
+  border-radius: 10px;
+}
+
+
+/* =========================================
+   MOVIE CARD
+========================================= */
+
+.movie-card {
+  min-width: 190px;
+
+  padding: 12px;
+
+  background: #111722;
+  border: 1px solid #202838;
+  border-radius: 10px;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-6px);
+  border-color: #344158;
+}
+
+.movie-poster {
+  width: 100%;
+  height: 250px;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 7px;
+
+  margin-bottom: 12px;
+}
+
+.movie-card h3 {
+  margin: 5px 0;
+
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.movie-card p {
+  margin: 6px 0;
+  color: #f5c542;
+}
+
+.movie-card span {
+  color: #8f96a5;
+  font-size: 14px;
+}
+
+
+/* =========================================
+   MOVIE ACTION BUTTON
+========================================= */
+
+.movie-action-btn {
+  width: 100%;
+
+  margin-top: 14px;
+  padding: 8px 10px;
+
+  border: 1px solid #2a3345;
+  border-radius: 6px;
+
+  background: #171e2b;
+  color: #c9ced8;
+
+  font-size: 13px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.movie-action-btn:hover {
+  background: #222b3b;
+  color: white;
+  border-color: #3b465b;
+}
+
+
+/* =========================================
+   MOVIES PAGE
+========================================= */
+
+.page {
+  min-height: calc(100vh - 70px);
+  padding: 40px 60px;
+}
+
+.page .movie-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 25px;
+
+  overflow: visible;
+}
+
+.page .movie-card {
+  min-width: 0;
+}
+
+
+/* =========================================
+   GENRE FILTER
+========================================= */
+
+.genre-filter {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin: 25px 0;
+}
+
+.genre-filter button {
+  padding: 9px 18px;
+
+  border: 1px solid #202838;
+  border-radius: 20px;
+
+  background: #111722;
+  color: #b8bcc7;
+
+  font-size: 14px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.genre-filter button:hover {
+  background: #1b2230;
+  color: white;
+}
+
+.genre-filter button.active {
+  background: white;
+  color: #080b12;
+  font-weight: bold;
+}
+
+
+/* =========================================
+   RECOMMENDATIONS GRID
+========================================= */
+
+.recommended .movie-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 25px;
+
+  overflow: visible;
+}
+
+.recommended .movie-card {
+  min-width: 0;
+}
+
+
+/* =========================================
+   MOVIE DETAILS
+========================================= */
+
+.movie-details-page {
+  min-height: calc(100vh - 70px);
+
+  padding: 70px 6%;
+
+  position: relative;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: white;
+}
+
+.movie-details-container {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 320px 1fr;
+
+  gap: 50px;
+
+  align-items: center;
+}
+
+
+/* =========================================
+   MOVIE DETAILS POSTER
+========================================= */
+
+.movie-details-poster {
+  width: 320px;
+}
+
+.movie-details-poster img {
+  width: 100%;
+  height: 480px;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.55);
+}
+
+
+/* =========================================
+   MOVIE DETAILS CONTENT
+========================================= */
+
+.movie-details-content {
+  max-width: 700px;
+}
+
+.movie-label {
+  margin: 0 0 12px;
+
+  color: #6ea8ff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.movie-details-content h1 {
+  margin: 0 0 22px;
+
+  color: white;
+
+  font-size: 58px;
+  line-height: 1.05;
+}
+
+.movie-meta {
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+
+  margin-bottom: 28px;
+
+  color: #c8cfdb;
+
+  font-size: 16px;
+}
+
+.movie-meta span:first-child {
+  color: #ffd43b;
+}
+
+.movie-description {
+  max-width: 680px;
+
+  margin: 0 0 38px;
+
+  color: #c4cad4;
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   RATING
+========================================= */
+
+.movie-details-content h2 {
+  margin: 28px 0 16px;
+
+  color: white;
+
+  font-size: 24px;
+}
+
+.rating-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.rating-buttons button {
+  width: 38px;
+  height: 38px;
+
+  border: 1px solid #394354;
+  border-radius: 5px;
+
+  background: #202938;
+  color: white;
+
+  font-size: 18px;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.rating-buttons button:hover {
+  background: #303b4f;
+  border-color: #6d7d96;
+
+  transform: translateY(-2px);
+}
+
+.rating-buttons button.selected {
+  background: #f5c542;
+  border-color: #f5c542;
+  color: #111;
+}
+
+.rating-buttons button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   RATING MESSAGES
+========================================= */
+
+.rating-success,
+.rating-error {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.rating-success {
+  color: #55d68a;
+}
+
+.rating-error {
+  color: #ff6b6b;
+}
+
+
+/* =========================================
+   MOVIE ACTIONS
+========================================= */
+
+.movie-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 32px;
+}
+
+.add-list-button,
+.trailer-button {
+  min-height: 42px;
+
+  padding: 0 22px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  border-radius: 7px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.add-list-button {
+  border: 1px solid #3b4960;
+
+  background: #263247;
+  color: white;
+}
+
+.add-list-button:hover {
+  background: #34435a;
+  border-color: #53637c;
+}
+
+.trailer-button {
+  border: 1px solid #3b4960;
+
+  background: transparent;
+  color: white;
+}
+
+.trailer-button:hover {
+  background: #263247;
+  border-color: #60718d;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back-button {
+  display: inline-flex;
+
+  margin-top: 20px;
+  padding: 10px 16px;
+
+  border: 1px solid #303b4d;
+  border-radius: 7px;
+
+  color: #b8c1cf;
+
+  font-size: 14px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.back-button:hover {
+  background: #1b2432;
+  color: white;
+}
+
+
+/* =========================================
+   CAST
+========================================= */
+
+.cast-section {
+  margin-top: 35px;
+}
+
+.cast-section h2 {
+  margin-bottom: 18px;
+  font-size: 24px;
+}
+
+.cast-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.cast-card {
+  min-width: 150px;
+}
+
+.cast-avatar {
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #2a3345;
+  border-radius: 50%;
+
+  background: #1b2230;
+  color: #c9ced8;
+
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.cast-card h3 {
+  margin: 10px 0 4px;
+  font-size: 14px;
+}
+
+.cast-card p {
+  margin: 0;
+
+  color: #777f8f;
+  font-size: 13px;
+}
+
+
+/* =========================================
+   SIMILAR MOVIES
+========================================= */
+
+.similar-section {
+  max-width: 1100px;
+
+  margin: 60px auto 0;
+
+  position: relative;
+  z-index: 1;
+}
+
+.similar-section h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+.similar-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.similar-card {
+  padding: 10px;
+
+  border: 1px solid #202838;
+  border-radius: 10px;
+
+  background: #111722;
+  color: white;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.similar-card:hover {
+  transform: translateY(-5px);
+  border-color: #3b465b;
+}
+
+.similar-card img {
+  width: 100%;
+  height: 230px;
+
+  object-fit: cover;
+
+  border-radius: 7px;
+}
+
+.similar-card h3 {
+  margin: 10px 0 5px;
+  font-size: 15px;
+}
+
+.similar-card p {
+  margin: 0;
+
+  color: #f5c542;
+  font-size: 13px;
+}
+
+
+/* =========================================
+   AUTH
+========================================= */
+
+.auth-page {
+  min-height: calc(100vh - 70px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+
+  background: #080b12;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+
+  padding: 35px;
+
+  background: #111722;
+
+  border: 1px solid #252e3d;
+  border-radius: 12px;
+}
+
+.auth-card h1 {
+  margin: 0;
+
+  color: white;
+
+  font-size: 32px;
+}
+
+.auth-subtitle {
+  margin-bottom: 25px;
+  color: #858d9c;
+}
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.auth-card input {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  box-sizing: border-box;
+
+  background: #0b1019;
+
+  border: 1px solid #2a3345;
+  border-radius: 7px;
+
+  color: white;
+
+  outline: none;
+}
+
+.auth-card input:focus {
+  border-color: #53627a;
+}
+
+.auth-submit {
+  padding: 12px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #e8e8e8;
+  color: #080b12;
+
+  font-weight: bold;
+}
+
+.auth-submit:hover {
+  background: white;
+}
+
+.auth-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-switch {
+  width: 100%;
+
+  margin-top: 18px;
+  padding: 8px;
+
+  border: none;
+
+  background: transparent;
+  color: #929bad;
+
+  transition: color 0.2s ease;
+}
+
+.auth-switch:hover {
+  color: white;
+}
+
+.auth-error {
+  margin: 0;
+
+  color: #ff6b6b;
+  font-size: 13px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+  nav {
+    padding: 0 30px;
+  }
+
+  .hero {
+    padding: 0 30px;
+  }
+
+  .recommended,
+  .page {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .page .movie-list {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .recommended .movie-list {
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
+  }
+
+  .movie-details-container {
+    grid-template-columns: 280px 1fr;
+    gap: 35px;
+  }
+
+  .movie-details-poster {
+    width: 280px;
+  }
+
+  .movie-details-poster img {
+    height: 420px;
+  }
+
+  .movie-details-content h1 {
+    font-size: 46px;
+  }
+}
+
+
+@media (max-width: 800px) {
+  nav {
+    height: auto;
+    min-height: 70px;
+
+    padding: 15px 20px;
+
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .search-bar {
+    order: 3;
+    width: 100%;
+  }
+
+  .search-bar input {
+    width: 100%;
+  }
+
+  .hero {
+    min-height: 500px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .page .movie-list {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .recommended .movie-list {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .movie-details-page {
+    padding: 45px 25px;
+  }
+
+  .movie-details-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .movie-details-poster {
+    width: 260px;
+    margin: 0 auto;
+  }
+
+  .movie-details-poster img {
+    height: 390px;
+  }
+
+  .movie-details-content {
+    max-width: 100%;
+  }
+
+  .movie-details-content h1 {
+    font-size: 40px;
+  }
+
+  .movie-meta {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .movie-actions {
+    flex-wrap: wrap;
+  }
+
+  .similar-list {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+@media (max-width: 500px) {
+  nav {
+    justify-content: center;
+  }
+
+  nav h2 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .hero {
+    padding: 0 20px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .recommended,
+  .page {
+    padding: 30px 20px;
+  }
+
+  .page .movie-list,
+  .recommended .movie-list {
+    grid-template-columns: 1fr;
+  }
+
+  .movie-card {
+    width: 100%;
+  }
+
+  .movie-details-poster {
+    width: 220px;
+  }
+
+  .movie-details-poster img {
+    height: 330px;
+  }
+
+  .movie-details-content h1 {
+    font-size: 34px;
+  }
+
+  .movie-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .add-list-button,
+  .trailer-button {
+    width: 100%;
+  }
+
+  .similar-list {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================
+   RECOMMENDATION GRID
+========================================= */
+
+.recommendation-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 25px;
+}
+
+.recommendation-grid .movie-card {
+  min-width: 0;
+  width: 100%;
+}
+
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+  .recommendation-grid {
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
+  }
+}
+
+
+/* Smaller screens */
+
+@media (max-width: 800px) {
+  .recommendation-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* Mobile */
+
+@media (max-width: 500px) {
+  .recommendation-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.recommendation-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.recommendation-grid .movie-card {
+  min-width: 0;
+  width: 100%;
+}
+
+@media (max-width: 1000px) {
+  .recommendation-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .recommendation-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 500px) {
+  .recommendation-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   ADDITIONAL STYLES
+========================================= */
+
+.movie-action-btn.active {
+  background: #065f46;
+  border-color: #059669;
+  color: #6ee7b7;
+}
+
+.movie-action-btn.active:hover {
+  background: #047857;
+  color: #a7f3d0;
+}
+
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-user-logged {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-name-link {
+  color: #93c5fd;
+  font-weight: 600;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.user-name-link:hover {
+  color: white;
+}
+
+.logout-button {
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #cbd5e1;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.logout-button:hover {
+  background: #ef4444;
+  border-color: #dc2626;
+  color: white;
+}
+
+.login-link {
+  background: #3b82f6;
+  color: white !important;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.login-link:hover {
+  background: #2563eb;
+}
